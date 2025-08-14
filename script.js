@@ -155,22 +155,51 @@ Examples:
 */
 console.log("Problem 5: Take a picture!");
 
-function sortPhotos(pics){
-    console.log(`ORIGINAL: ${pics}`)
-    const recentFive = pics.sort().slice(-5);
+function sortPhotos(pics) {
+    pics.sort((a, b) => {
+        const [yearA, numA] = a.split('.img').map(Number);
+        const [yearB, numB] = b.split('.img').map(Number);
+        
+        if (yearA !== yearB) {
+          return yearA - yearB;
+        }
+        return numA - numB;
+    });
 
-//   const next = recentFive[recentFive.length - 1];
-//   const popped = next.slice(-1)
-//   const newNum = parseInt(popped) + 1;
-//   recentFive.push(next.slice(0, -1) + newNum)
-  
-  console.log(`recentFive: ${recentFive}`)
-  console.log(`next: ${next}`)
-  console.log(`popped: ${popped} and type: ${typeof(popped)}`)
-  console.log(`newNum: ${newNum}`)
+    const recentFive = pics.slice(-5);
+    const last = recentFive[recentFive.length - 1];
+    const [yearStr, numStr] = last.split('.img');
+    const nextNumber = parseInt(numStr) + 1;
+    const nextPhoto = `${yearStr}.img${nextNumber}`;
 
-  return recentFive
-};
+    // Return the 5 recent plus the next one
+    return [...recentFive, nextPhoto];
+}
+
 
 console.log(sortPhotos(["2016.img1","2016.img2","2015.img3","2016.img4","2013.img5"]));
-// console.log(sortPhotos(["2016.img1"]));
+console.log(sortPhotos(["2016.img1"]));
+
+/*
+7 kyu - Vowel Count
+Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces.
+*/
+console.log("Problem 6: Vowel Count");
+
+function getCount(str) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  let count = 0;
+
+  for (let char of str.toLowerCase()) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
