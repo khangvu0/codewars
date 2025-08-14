@@ -1,0 +1,168 @@
+/*-------------------- Google Font --------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*-------------------- Color Variables --------------------*/
+:root {
+    --hue-color: 230;
+    --main-color: hsl(var(--hue-color), 71%, 61%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+}
+
+/*-------------------- Base CSS Rules --------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*-------------------- Layout Wrapper --------------------*/
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/*-------------------- Header --------------------*/
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--body-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav {
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    font-weight: 500;
+}
+
+.nav_logo {
+    color: var(--title-color);
+    font-size: 1.1rem;
+}
+
+.nav_logo:hover {
+    color: var(--main-color);
+}
+
+.nav_list {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav_link {
+    font-size: 0.9rem;
+    color: var(--title-color);
+}
+
+.nav_link:hover {
+    color: var(--main-color);
+}
+
+/*-------------------- Main --------------------*/
+.main {
+    flex-grow: 1;
+    padding: 2rem 1rem 2rem;
+}
+
+.directions {
+    font-size: 1rem;
+    color: var(--main-color);
+}
+
+.difficulty {
+    font-size: 1rem;
+    color: var(--title-color);
+}
+
+.question {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/*-------------------- Footer --------------------*/
+.footer {
+    background-color: var(--main-color);
+    padding: 1.5rem 1rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.footer-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.footer-subtitle {
+    font-size: 0.875rem;
+    color: white;
+}
+
+/*-------------------- Media Queries --------------------*/
+/* For tablet */
+@media screen and (min-width: 768px) {
+    .nav_logo {
+        font-size: 1.3rem;
+    }
+
+    .nav_link {
+        font-size: 1rem;
+    }
+
+    .directions {
+        font-size: 1.2rem;
+    }
+
+    .footer-title {
+        font-size: 1.1rem;
+    }
+
+    .footer-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+    .directions {
+        font-size: 1.3rem;
+    }
+}
