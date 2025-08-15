@@ -177,11 +177,10 @@ function sortPhotos(pics) {
     const nextNumber = parseInt(numStr) + 1;
     const nextPhoto = `${yearStr}.img${nextNumber}`;
 
-    // Return the 5 recent plus the next one
     return [...recentFive, nextPhoto];
 }
 
-
+//I found this problem the hardest of all. Spent 30+ minutes 
 console.log(sortPhotos(["2016.img1","2016.img2","2015.img3","2016.img4","2013.img5"]));
 console.log(sortPhotos(["2016.img1"]));
 
