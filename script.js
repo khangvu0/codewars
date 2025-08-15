@@ -1,4 +1,5 @@
 /*
+Problem 1
 7 kyu - Find the divisors!
 Create a function named divisors/Divisors that takes an integer n > 1 and returns an array with all of the integer's divisors(except for 1 and the number itself), from smallest to largest. If the number is prime return the string '(integer) is prime' (null in C#, empty table in COBOL) (use Either String a in Haskell and Result<Vec<u32>, String> in Rust).
 
@@ -29,6 +30,7 @@ console.log(divisors(25));
 console.log(divisors(44));
 
 /*
+Problem 2
 6 kyu - Convert string to camel case
 Complete the method/function so that it converts dash/underscore delimited words into camel casing. 
 The first word within the output should be capitalized only if the original word was capitalized 
@@ -67,6 +69,7 @@ console.log(toCamelCase("The_Stealth_Warrior"));
 console.log(toCamelCase("The_Stealth-Warrior"));
 
 /*
+Problem 3
 6 kyu - Bit Counting
 Write a function that takes an integer as input, and returns the number of bits that are equal to 
 one in the binary representation of that number. You can guarantee that input is non-negative.
@@ -86,6 +89,7 @@ console.log(countBits(1234));
 console.log(countBits(5678));
 
 /*
+Problem 4
 6 kyu - Counting Duplicates
 Count the number of Duplicates
 Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
@@ -138,6 +142,7 @@ console.log(duplicateCount("Indivisibilities"))
 console.log(duplicateCount("aA11"))
 
 /*
+Problem 5
 6 kyu - Take a picture!
 You are standing on top of an amazing Himalayan mountain. The view is absolutely breathtaking! you want to take a picture on your phone, but... your memory is full again! ok, time to sort through your shuffled photos and make some space...
 
@@ -181,6 +186,7 @@ console.log(sortPhotos(["2016.img1","2016.img2","2015.img3","2016.img4","2013.im
 console.log(sortPhotos(["2016.img1"]));
 
 /*
+Problem 6
 7 kyu - Vowel Count
 Return the number (count) of vowels in the given string.
 
@@ -202,4 +208,41 @@ function getCount(str) {
 
   return count;
 }
+
+/*
+Problem 7
+6 kyu - Split Strings
+Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+
+Examples:
+
+* 'abc' =>  ['ab', 'c_']
+* 'abcdef' => ['ab', 'cd', 'ef']
+*/
+console.log("Problem 7: Split Strings");
+
+function solution(str){
+   if (!str || str == '') {
+        return [];
+    }
+
+    if (str.length % 2 === 1) {
+        str += '_';
+    }
+  
+    const result = [];
+    for (let i = 0; i < str.length; i += 2) {
+        result.push(str[i] + str[i + 1]);
+    }
+
+    return result;
+}
+
+/*
+Problem 8
+5 kyu - Moving Zeros To The End
+Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+*/
 
