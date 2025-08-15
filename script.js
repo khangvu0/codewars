@@ -1,7 +1,9 @@
 /*
 Problem 1
 7 kyu - Find the divisors!
-Create a function named divisors/Divisors that takes an integer n > 1 and returns an array with all of the integer's divisors(except for 1 and the number itself), from smallest to largest. If the number is prime return the string '(integer) is prime' (null in C#, empty table in COBOL) (use Either String a in Haskell and Result<Vec<u32>, String> in Rust).
+Create a function named divisors/Divisors that takes an integer n > 1 and returns an array with all of the integer's 
+divisors(except for 1 and the number itself), from smallest to largest. If the number is prime return the string '(integer)
+is prime' (null in C#, empty table in COBOL) (use Either String a in Haskell and Result<Vec<u32>, String> in Rust).
 
 Examples:
 divisors(12) --> [2, 3, 4, 6]
@@ -24,6 +26,8 @@ function divisors(integer) {
     }
     return answer;
 }
+
+// I found the algorithm and code pretty straightforward
 
 console.log(divisors(7));
 console.log(divisors(25));
@@ -63,6 +67,7 @@ function toCamelCase(str){
 
     return camelCaseWords.join('');
 }
+// This problem gave me more trouble. Biggest part was figuring out how to take out the - and _
 
 console.log(toCamelCase("the-stealth-warrior"));
 console.log(toCamelCase("The_Stealth_Warrior"));
@@ -84,6 +89,9 @@ function countBits(n) {
     return ones.length;
 }
 
+// I initially tried to use parseInt but after console logging I found out was wrong and went to google tto findd the .toString method
+// Also knew I could use the spread operator but had to look up how to use it correctly
+
 console.log(countBits(200));
 console.log(countBits(1234));
 console.log(countBits(5678));
@@ -92,7 +100,9 @@ console.log(countBits(5678));
 Problem 4
 6 kyu - Counting Duplicates
 Count the number of Duplicates
-Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+Write a function that will return the count of distinct case-insensitive alphabetic characters and 
+numeric digits that occur more than once in the input string. The input string can be assumed to contain
+only alphabets (both uppercase and lowercase) and numeric digits.
 
 Example
 "abcde" -> 0 # no characters repeats more than once
@@ -135,6 +145,9 @@ function duplicateCount(text){
   
     return Object.keys(duplicates).length;
 }
+
+// I found this problem troublesome. Would've been more helpful if I pseudocoded to make an algorithm to follow
+// Needed to use comments to organize my thinking - problem was more complex
 
 console.log(duplicateCount("abcde"))
 console.log(duplicateCount("aabBcde"))
@@ -180,7 +193,10 @@ function sortPhotos(pics) {
     return [...recentFive, nextPhoto];
 }
 
-//I found this problem the hardest of all. Spent 30+ minutes 
+// I found this problem the hardest of all. Spent 30+ minutes
+// I knew I could sort and knew I could use .split() but wanted to try a different approach
+// Ended up going back to .split(). After the if statement, the problem was straightforward
+
 console.log(sortPhotos(["2016.img1","2016.img2","2015.img3","2016.img4","2013.img5"]));
 console.log(sortPhotos(["2016.img1"]));
 
@@ -207,6 +223,8 @@ function getCount(str) {
 
   return count;
 }
+
+// Problem was pretty straightforward. 
 
 console.log(getCount("My name is Khang Vu"));
 console.log(getCount("hotdog"));
@@ -240,6 +258,8 @@ function solution(str){
     return result;
 }
 
+// Made an algorithm which made this much easier
+
 console.log(solution('abc'));
 console.log(solution('abcde'));
 
@@ -258,5 +278,7 @@ function moveZeros(arr) {
   return arr.filter(item => item !== 0).concat(zeros);
 }
 
+// I found this problem to be very simple and straightforward. Very surprised it is a 5 kyu.
+// Realizing I am more comfortable working with arrays than strings
+
 console.log(moveZeros([1,2,0,1,0,1,0,3,0,1]));
-//I found this problem to be very simple and straightforward. 
