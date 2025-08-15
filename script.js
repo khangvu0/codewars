@@ -209,6 +209,9 @@ function getCount(str) {
   return count;
 }
 
+console.log(getCount("My name is Khang Vu"));
+console.log(getCount("hotdog"));
+
 /*
 Problem 7
 6 kyu - Split Strings
@@ -238,6 +241,10 @@ function solution(str){
     return result;
 }
 
+console.log(solution('abc'));
+console.log(solution('abcde'));
+
+
 /*
 Problem 8
 5 kyu - Moving Zeros To The End
@@ -246,3 +253,11 @@ Write an algorithm that takes an array and moves all of the zeros to the end, pr
 moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
 */
 
+function moveZeros(arr) {
+  const zeros = arr.filter(item => item === 0)
+//   return arr.filter(item => item !== 0) + zeros;
+  return arr.filter(item => item !== 0).concat(zeros);
+}
+
+console.log(moveZeros([1,2,0,1,0,1,0,3,0,1]));
+//I found this problem to be very simple and straightforward. 
